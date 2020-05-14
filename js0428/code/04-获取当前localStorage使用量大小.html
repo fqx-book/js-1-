@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        /* 
+            存值
+         */
+         for(let i=0;i<10;i++){
+             localStorage.setItem(i,"123456");// 1 Bit 里面 8个 位 00000000
+         }
+         // 取值
+         let size = 0;// 初始值大小
+         for(let key in localStorage){
+             // 判断是否有 该属性
+             if(localStorage.hasOwnProperty(key)){
+                 // 增加 数据 大小
+                size += localStorage[key].length;
+             }
+         }
+         console.log(size,"Bit");
+    </script>
+
+</html>

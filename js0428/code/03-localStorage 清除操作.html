@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">清除小明</button>
+</body>
+
+<script>
+    /*
+        localStorage.setItem('myCat', 'Tom');
+        该语法用于读取 localStorage 项，如下:
+
+        let cat = localStorage.getItem('myCat');
+        该语法用于移除 localStorage 项，如下:
+
+        localStorage.removeItem('myCat');
+        该语法用于移除所有的 localStorage 项，如下:
+
+        // 移除所有
+        localStorage.clear();
+     */
+    let xiaoming = new Object();
+    xiaoming.sex = "男";
+    // 存值 第二个参数支持 字符串
+    // JSON.stringify(obj) 将对象 变成 字符串 
+    localStorage.setItem("xiaoming", JSON.stringify(xiaoming));
+    // 取值
+    let value = localStorage.getItem("xiaoming");
+    //JSON.parse(字符串) 将字符串 转成对象
+    let valueObj = JSON.parse(value);
+    console.log(value.sex);
+    console.log(valueObj.sex);
+    console.log(value);
+    document.getElementById("btn").addEventListener("click", function () {
+        localStorage.removeItem("xiaoming")
+    })
+    // localStorage.clear() 清除所有的localStorage 数据
+
+
+
+</script>
+
+</html>

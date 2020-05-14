@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">清除小明</button>
+</body>
+
+<script>
+    /*
+        sessionStorage.setItem('myCat', 'Tom');
+        该语法用于读取 sessionStorage 项，如下:
+
+        let cat = sessionStorage.getItem('myCat');
+        该语法用于移除 sessionStorage 项，如下:
+
+        sessionStorage.removeItem('myCat');
+        该语法用于移除所有的 sessionStorage 项，如下:
+
+        // 移除所有
+        sessionStorage.clear();
+     */
+    let xiaoming = new Object();
+    xiaoming.sex = "男";
+    // 存值 第二个参数支持 字符串
+    // JSON.stringify(obj) 将对象 变成 字符串 
+    sessionStorage.setItem("xiaoming", JSON.stringify(xiaoming));
+    // 取值
+    let value = sessionStorage.getItem("xiaoming");
+    //JSON.parse(字符串) 将字符串 转成对象
+    let valueObj = JSON.parse(value);
+    console.log(value.sex);
+    console.log(valueObj.sex);
+    console.log(value);
+    document.getElementById("btn").addEventListener("click", function () {
+        sessionStorage.removeItem("xiaoming")
+    })
+    // sessionStorage.clear() 清除所有的sessionStorage 数据
+
+
+
+</script>
+
+</html>

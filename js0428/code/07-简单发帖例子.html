@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="inputVal">
+    <button id="send">发帖</button>
+    <div id="content"></div>
+</body>
+<script>
+    // 初始化
+    for(let key in localStorage){
+        if(localStorage.hasOwnProperty(key)){
+            createPragraph(localStorage.getItem(key))
+        }
+    }
+
+    document.getElementById("send").addEventListener("click", function () {
+        let inputVal = document.getElementById("inputVal").value;
+        if (!inputVal.trim()) {
+            alert("输入不能为空!");
+        }
+        localStorage.setItem(Date.now().toString(), inputVal);
+        createPragraph(inputVal);
+    })
+    // 创建段落
+    function createPragraph(inputVal) {
+        let content = document.getElementById("content");
+        let p = document.createElement("p");
+        p.innerHTML = inputVal;
+        content.appendChild(p);
+    }
+</script>
+
+</html>
