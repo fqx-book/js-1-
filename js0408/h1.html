@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>h1页面</title>
+	</head>
+	<body>
+		<h1>我是h1页面<a href="h2.html">前往h2页面</a></h1>
+		<button id="enter">根据历史记录栈进入到h2页面</button>
+		<button id="back">根据历史记录栈返回到6页面</button>
+	</body>
+	<script type="text/javascript">
+		document.getElementById('back').onclick=function(){
+			// 后退一个页面
+			// history.back();
+			
+			// 使用go()函数代替back()
+			history.go(-1);
+		}
+		
+		document.getElementById('enter').onclick=function(){
+			history.forward();
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>按钮切换图片</title>
+	</head>
+	<body>
+		<!-- 切换图片的按钮 -->
+		<button id="btn1">1</button>
+		<button id="btn2">2</button>
+		<button id="btn3">3</button>
+		<!-- 显示图片的盒子 -->
+		<div>
+			<img id="pic" src="" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 获取图片标签
+		let imgTag = document.getElementById('pic');
+		
+		/* 为切换图片的按钮增加点击事件 */
+		document.getElementById('btn1').onclick = function(){
+			// 切换图片的逻辑
+			// 修改标签的属性
+			imgTag.setAttribute('src','imgs/1.webp');
+		}
+		
+		document.getElementById('btn2').onclick = function(){
+			// 修改标签的属性
+			imgTag.setAttribute('src','imgs/2.webp');
+		}
+		
+		document.getElementById('btn3').onclick = function(){
+			// 修改标签的属性
+			imgTag.setAttribute('src','imgs/3.webp');
+		}
+	</script>
+</html>

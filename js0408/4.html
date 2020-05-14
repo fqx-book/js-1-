@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Math数学对象</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		let num1 = 10.6,num2=10.3,num3=10.0,num4=-1.3;
+		
+		// 四舍五入
+		let result = Math.round(num1);
+		console.log( result);
+		result = Math.round(num2);
+		console.log( result);
+		
+		// 进一法  向上取整
+		result = Math.ceil(num2);
+		console.log(result);
+		result = Math.ceil(num3);
+		console.log(result);
+		result = Math.ceil(num4);
+		console.log(result);
+		
+		// 去尾法   向下取整		
+		result = Math.floor(num1);
+		console.log(result);
+		result = Math.floor(num2);
+		console.log(result);
+		result = Math.floor(num4);
+		console.log(result);
+		
+		// 获取最大的值
+		result = Math.max(1,3,4,5);
+		console.log(result);
+		
+		// 获取最小的值
+		result = Math.min(1,3,4,5);
+		console.log(result);
+		
+		// 获取小数中的整数
+		result = Math.trunc(num2);
+		console.log(result);
+		
+		// 获取小数中的整数
+		result = Math.trunc(num4);
+		console.log(result);
+		
+		// 获取随机数 0-1
+		let random = Math.random();
+		console.log(random);
+	</script>
+</html>

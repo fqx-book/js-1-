@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>替换关键字</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		let msg = '我是程序员我是程序员我是程序员';
+
+		let newMsg = "一个大老板";
+		let oldMsg = "程序员";
+		// 判断字符串是否出现过oldMsg中的字符
+		let index = msg.indexOf(oldMsg);
+		while (index != -1) {
+			// 元字符串中还出现oldMsg的字符
+			// 执行替换操作
+			msg = msg.replace(oldMsg, newMsg);
+			// 替换完成后，再检查msg中是否还存在oldMsg的字符
+			index = msg.indexOf(oldMsg);
+		}
+		console.log(msg);
+		
+		// 通过正则表达式（暂时没有教）
+		console.log(msg.replace(/(大老板*)/g,'程序员'));
+		
+		
+		// 获取数组中的最大值
+		let nums = [1,2,3,100,4,20,0.5];
+		// 存储最大值
+		let max = 0;
+		for(let i=0;i<nums.length;i++){
+			// 如果当前的数组元素，比max大，则将max更新当前元素
+			let curr = nums[i];
+			if(max < curr){
+				max = curr;
+			}
+		}
+		console.log(max);
+	 
+		// 获取数组中的最小值
+		// 存储最小值
+		let min = nums[0];
+		for(let i=0;i<nums.length;i++){
+			// 如果当前的数组元素，比max大，则将max更新当前元素
+			let curr = nums[i];
+			if(min > curr){
+				min = curr;
+			}
+		}
+		console.log(min);
+		
+		
+		
+		// 创建 2019-01-01 00:00:00 时间对象
+		let old=new Date('2019-01-01 00:00:00');
+		// 获取当前时间
+		let now = new Date();
+		// 计算天数查  
+		// 计算公式: 年-年，月-月，日-日 ...    非常复杂
+		// 利用时间戳计算
+		
+		// 获取2019年的时间戳
+		let oldTimeStamp = old.getTime();
+		// 获取当前时间的时间戳
+		let nowTimeStamp = now.getTime();
+		console.log('2019年：',oldTimeStamp,'，当前时间：',nowTimeStamp);
+		// 当前时间的时间戳 - 2019年的时间戳 = 得到两个时间的毫秒差
+		let timeDiff = nowTimeStamp - oldTimeStamp;
+		// 计算出一天的总毫秒数
+		let dayMs = 1000*60*60*24;
+		console.log('一天的总毫秒数：',dayMs);
+		// 两个时间的毫秒差 / 一天的总毫秒数 = 天数
+		let dayDiff = timeDiff / dayMs;
+		console.log("两个时间的天数差:",dayDiff);
+	</script>
+</html>

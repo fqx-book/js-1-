@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+        通过 forEach 循环数组里面的值 
+     */
+    let tangcengshitu = ["孙悟空", "猪八戒", "沙僧", "白龙马"];
+    // 通过 forEach 方法  循环 数组中的值
+    tangcengshitu.forEach(function (item, index, arr) {
+        console.log("名字：" + item + " 索引:" + index);
+        console.log(arr);
+    })
+    // 改变 forEach 里面的回调函数的 形参 ！！！强烈不建议 这个 简单的命名
+    // tangcengshitu.forEach(function (v, i, a) {
+    //     console.log("名字：" + v + " 索引:" + i);
+    //     console.log(a);
+    // })
+
+</script>
+
+</html>

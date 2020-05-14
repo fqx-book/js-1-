@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js数据类型判断+常量</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		let num =1;
+		let num2 ='二';
+		
+		let result = num *2; // 正常运行
+		console.log(result);
+		result = num2*10; // ???
+		console.log(result);
+		
+		console.log(typeof num2);
+		console.log(typeof num);
+		
+		// 变量
+		let pi=3.14;
+		pi = 10;
+		// 常量
+		const year =2020;
+		// year=2021; // 常量不能二次赋值
+		
+		
+		// 一次性定义多个变量
+		let num3=10, num4=20;
+		// 一次性定义多个常量
+		const boss ='张无忌', girl='赵敏';
+		console.log(pi);
+		console.log(year);
+		console.log(num3,num4);
+		console.log(boss,girl);
+	</script>
+</html>

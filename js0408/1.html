@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>字符串模板</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 需求:我是xxx，今年xx岁。
+		
+		let name ='孙悟空';
+		let age = 100;
+		let msg ='我是'+name+'，今年'+age+'岁。';
+		console.log(msg);
+		// ES6提供更优雅的字符串拼接方式
+		// 反引号 ``    ${已存在的变量名称} 自动将变量于字符串拼接
+		let msg2 = `我是${name}，今年${age}岁。`;
+		console.log(msg2);
+	</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Date时间对象</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 显示当前系统的时间   -- 直接构建
+		let now = new Date();
+		console.log(now);
+		
+		// 通过字符串构建一个时间对象
+		let snow = new Date('2002-12-1 00:00:00');
+		console.log(snow);
+		
+		// 通过时间信息来构建一个时间对象
+		// 注意：月份 0-11  ---> 1-12
+		let soon = new Date(2020,3);
+		console.log(soon);
+		
+		// 通过时间戳构建一个时间对象（必须使用毫秒级别的时间戳）
+		// 秒级别的时间戳(10位):1586333053  
+		// 毫秒级别的时间戳(13位):1586333053000 	
+		let ago = new Date(1586333053*1000);
+		console.log(ago);
+		
+		// 获取当前时间的时间戳
+		let curr = Date.now();
+		console.log(curr);
+		
+		// 获取当前年份
+		let year = now.getFullYear();
+		console.log(`现在是${year}年`);
+		
+		// 获取今天是几月份  0-11   ---> 1-12
+		let month = now.getMonth();
+		console.log(`现在是${month}月份`);
+		
+		// 获取今天是几号     
+		let monthOfDay = now.getDate();
+		console.log(`今天是${monthOfDay}号`);
+		
+		// 获取今天是星期几  0~6 ---> 星期日~星期6
+		let day = now.getDay();
+		console.log(`今天是星期${day}`);
+		
+		// 获取现在是几点  24小时制
+		let hour = now.getHours();
+		console.log(`现在是${hour}点`);
+		 
+		// 获取现在是几分
+		let min = now.getMinutes();
+		console.log(`现在是${min}分`);
+		
+		// 获取现在是几秒
+		let sec = now.getSeconds();
+		console.log(`现在是${sec}秒`);
+		
+		// 获取指定时间的时间戳(毫秒级别)
+		let ms = soon.getTime();
+		console.log(ms);
+	</script>
+</html>

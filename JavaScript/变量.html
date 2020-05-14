@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS之变量篇</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 定义一个变量
+		var date;
+		// 装数据  (赋值)
+		date = '2020-4-2 9:50:00';
+
+		// 定一个msg变量，并且赋值
+		var msg = '学海无涯苦作舟';
+
+		console.log(date);
+		console.log(msg);
+
+		// 数据类型   数字，文字，布尔值
+		// 数字类型
+		var num = 2000;
+		var num2 = 1.23;
+		var num3 = -10;
+		console.log("整数:", num);
+		console.log("小数：", num2);
+		console.log("负数：", num3);
+		// 文字  需要使用单引号('')或者双引号("")进行包裹
+
+		// 输出: 我说："我是程序员";
+		var name = "悟空";
+		// 同类符号不能进行相互包裹  如：单引号包住单引号  双引号包住双引号 
+		// 可以用过 \ 进行转义，使之失效。
+		var outtxt = " 我说：\"我是程序员\"";
+		var txt2 = '我是："我是程序员"';
+		var txt3 = "我是：'我是程序员'";
+		// 字符串与任何数据相加都会变成字符串
+		console.log("今天是" + 2 + 2 + "号");
+		console.log("今天是" + (2 + 2) + "号");
+
+		console.log(name);
+		console.log(outtxt);
+		// 布尔值
+		var b1 = 1 > 2;
+		var b2 = 1 < 2;
+
+		console.log("1>2?买定离手：", b1);
+		console.log("1<2?买定离手：", b2);
+
+		// 算术
+		var num4 = 10;
+		var num5 = 3;
+		console.log(num4 + num5);
+		console.log(num4 - num5);
+		console.log(num4 * num5);
+		// 整数相除会出现小数
+		console.log(num4 / num5);
+
+		// 判断奇数
+		// 取余 %
+		// 10/2   =0？偶数    !=0 奇数
+		var num6 = 10 % 3;
+		var num7 = 11 % 3;
+		console.log("10/3的余数:",num6);
+		console.log('11/3的余数：',num7);
+		
+		// 赋值运算符
+		var num8 =20;
+		// 给num8再增加10
+		// num8=num8+10;
+		// num8+=10; 等同于  num8=num8+10; 
+		num8+=10;		
+		console.log(num8);
+		
+		// 比较运算符
+		var result1 = 1 > 2;
+		var result2 = num8 < num7;
+		var result3 = 10>=10;
+		var result4 = 1<=3;
+		var result5 = 1==1;
+		// 值判断相等   数据类型不相等
+		var result6 = 1 == '1'; // true 1  false all-1
+		var result8 = 1 !='1'; // true 2 false all-2
+		// 值判断相等并且类型也=必须相等
+		var result7 = 1 === '1'; // true 0 false all
+		var result9 = 1 !== '1'; // true  
+		console.log('> :',result1);
+		console.log('< :',result2);
+		console.log('>= :',result3);
+		console.log('<= :',result4);
+		console.log('== :',result5);
+		console.log("1=='1' :",result6);
+		console.log("1=='1' :",result7);
+		console.log("1!='1' :",result8);
+		console.log("1!=='1' :",result9);
+	</script>
+</html>

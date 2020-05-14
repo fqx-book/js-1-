@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM操作标签属性</title>
+		<style>
+			.dis{
+				background: lightgray;
+				border:0;
+				color:#fff;
+			}
+			
+			.btn{
+				width:100px;
+				height: 36px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">我是一个普通按钮</button>
+		<br/>
+		<button id="disBtn">禁用按钮</button>
+		<button id="getBtn">获取按钮属性</button>
+		<button id="hasBtn">判断属性是否存在</button>
+		<button id="removeBtn">移除禁用属性</button>
+	</body>
+	<script type="text/javascript">
+		let btnTag = document.getElementById('btn');
+
+		// 为移除按钮增加一个事件
+		document.getElementById("removeBtn").onclick = function() {
+			// 1.判断标签是否被禁用
+			let disabled = btnTag.hasAttribute('disabled');
+			if(disabled){
+				// 移除禁用效果（disabled属性+class属性）
+				btnTag.removeAttribute('disabled');
+				btnTag.removeAttribute('class');
+			}
+		}
+
+		// 为获取按钮增加一个事件
+		document.getElementById("hasBtn").onclick = function() {
+			// 判断指定标签是否存在某个属性
+			// 判断标签是否拥有id属性
+			let idExixts = btnTag.hasAttribute('id');
+			console.log('btn标签存在id属性：',idExixts);
+			// 判断标签是否拥有class属性
+			let clExists = btnTag.hasAttribute("class");
+			console.log('btn标签存在class属性：',clExists);
+		}
+
+		// 为获取按钮增加一个事件
+		document.getElementById("getBtn").onclick = function() {
+			/*
+				btnTag.getAttribute('class');
+				
+				btnTag		需要获取属性的标签
+				getAttribute('属性名')	获取属性名的函数
+				
+				1.getAttribute('class')获取存在的属性时，则返回对应的值
+				2.getAttribute('class')获取不存在的属性时，则返回null
+			*/
+
+			// 获取标签的id属性
+			let idAttr = btnTag.getAttribute('id');
+			console.log('btn的id属性值:', idAttr);
+
+			// 获取标签的class属性
+			let clAttr = btnTag.getAttribute('class');
+			console.log('btn的class属性值:', clAttr);
+
+		}
+
+
+		// 为禁用按钮增加一个事件
+		document.querySelector("#disBtn").onclick = function() {
+			/*
+				btnTag.setAttribute('class','dis');
+				
+				btnTag		需要设置属性的标签
+				setAttribute(属性名,属性值);
+				
+				1.通过setAttribute去设置标签没有的属性时，没有异常
+				2.重复设置的属性值，将会覆盖上一次设置的属性值
+				3.通过setAttribute可以设置标签的任意属性
+			*/
+			// 需求：禁用id=btn的按钮
+			// 增加一个disabled属性
+			btnTag.setAttribute('disabled', '');
+			// 通过setAttribute，为标签设置一个class
+			// 等于： class="dis"
+			btnTag.setAttribute('class', 'dis');
+
+			// 标签可以重复设置一个属性 class="btn"
+			// 重复设置的属性值，将会覆盖上一次设置的属性值
+			// btnTag.setAttribute('class','btn');
+			// class="btn dis"   属性值的写法因属性而发生改变
+			btnTag.setAttribute('class', 'btn dis');
+		}
+	</script>
+</html>

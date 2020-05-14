@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>轮播图</title>
+		<style>
+			*{margin: 0px; padding: 0px;}
+			li{list-style:none;}
+			.main{
+				width:590px;
+				height: 466px;
+				border:1px solid darkcyan;
+				position: relative;
+				
+				margin-left: auto;
+				margin-right: auto;
+				overflow: hidden;
+			}
+			.btn{width:50px;
+				height: 20px;
+				border:0;
+				background: blue;
+				color:white;
+				font-weight: bold;
+				font-size: 18x;
+				position: absolute;
+				top:50%;
+				outline:0;
+				cursor:pointer;}
+			.btz{left: 0;
+				border-radius: 0px 10px 10px 0px;}
+			.bty{right: 0;
+				border-radius: 10px 0px 0px 10px;}
+			.pic{float:left;}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<button class="btz btn"> &lt;</button>
+			<button class="bty btn"> &gt;</button>
+			<ul id="qpic"style="width:2000px; margin-left: 0px;">
+				<li class="pic"><img src="imgs/1.webp"/></li>
+				<li class="pic"><img src="imgs/2.webp"/></li>
+				<li class="pic"><img src="imgs/3.webp"/></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let pics=document.getElementById("qpic");
+		document.querySelector('.btz').onclick=function(){
+			let oldML = parseInt(pics.style.marginLeft);
+			console.log(oldML);
+			if(oldML < 0 ){
+				pics.style.marginLeft=(oldML+590)+"px";	
+			}
+			}
+		
+		document.querySelector('.bty').onclick=function(){
+			let oldML = parseInt(pics.style.marginLeft);
+			console.log(oldML);
+			if(oldML > -(590*2)){
+				pics.style.marginLeft=(oldML-590)+"px";
+			}
+		}
+	</script>
+</html>

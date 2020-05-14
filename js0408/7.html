@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Js之Location</title>
+	</head>
+	<body>
+		<!-- 
+		 javascript:void(0)   代表空连接,点击之后无任何反应
+		 -->
+		 
+		<div style="height: 2000px;"></div>
+		<a href="javascript:void(0)">跳转至京东</a>
+		<button>重载当前页面</button>
+	</body>
+	<script type="text/javascript">
+		
+		// 获取当前页面的网址
+		console.log(location.href);
+		
+		
+		document.querySelector('a').onclick=function(){
+			// 跳转到某一个地址（可是相对路径，也可以是网路路径）
+			location.href = 'http://www.jd.com';
+		}
+		
+		// 重载页面  重新加载页面（页面一定会被刷新）
+		document.querySelector('button').onclick=function(){
+			// ctrl+f5  强制刷新
+			// location.reload(true);
+			// 可能会读取缓存中的数据
+			location.reload();
+		}
+		
+		// 获取url中的请求参数
+		// decodeURI() 将中文转换为参数格式
+		// encodeURI() 将编码转换为中文
+		let param = decodeURI(location.search);
+		console.log(param);
+	</script>
+</html>

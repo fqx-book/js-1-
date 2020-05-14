@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js 之 函数</title>
+	</head>
+	<body>
+		<button id="sendMsg">发送模板信息</button>
+	</body>
+	<script type="text/javascript">
+		let i = 10;
+		let j = 20;
+
+		let a = 10;
+		let b = 20;
+
+		let k = 100;
+		let l = 20;
+		// 
+		document.getElementById('sendMsg').onclick = function() {
+			sendTemplateMsg();
+		};
+		///////////////////////具名函数  拥有名字的函数/////////////////////////
+		// 定一个函数
+		/* 
+		 function 定义函数的关键字
+		 add	函数名称
+		 (num1,num2)  形参   参数
+		 {}		函数体
+		 */
+
+		// 定一个发送模板信息的函数
+		// 无参函数：函数运行不依赖外部条件
+		function sendTemplateMsg() {
+			console.log("您好，有什么需要咨询的呢？");
+			console.log("现在提前进行51活动，有优惠哦");
+			console.log("现在下单可以享受100-20的优惠。");
+		}
+		// 执行函数的代码  将公共部分重复代码抽取为一处，方便重复调用
+		// sendTemplateMsg();
+		// sendTemplateMsg();
+
+		// 有参数的函数
+		// 带参函数：函数运行依赖外部条件
+		// 带有返回值的函数：执行函数后，需要依赖直接结果的
+		function jsq(sp, num1=0, num2=0) {
+			switch (sp) {
+				case '+':
+					return num1 + num2; // 返回指定的值给调用者
+					break;
+				case '-':
+					return num1 - num2;
+					break;
+				case '*':
+					return num1 * num2;
+					break;
+				case "/":
+					return num1 / num2;
+					break;
+			}
+		}
+		let result9=jsq("-", 200);
+		console.log(result9)
+		// 定以一个函数，返回 我是xxx,今年x岁，在xxx学校读书。
+		// 函数运行时依赖变量的个数，就是参数的个数
+		// 参数 = 默认值  ，当没有传入参数的时候，将使用指定的默认值来代替
+		function sayHi(name,age,school='未知'){
+			// 变量的默认值:undefined
+			// 当参数与传入参数个数不匹配的时候，将会使用默认值代替
+			
+			console.log('我是',name,',今年',age,'岁，在',school,'学校读书。');
+		}
+		// 完整参数
+		sayHi('张三丰',100,'武当山隔壁');
+		// 不完整参数
+		sayHi('张三丰',100);
+		let result = parseInt('1239'); // 1239
+		let result2 = jsq('+',10,21); // undefined
+		console.log(result);
+		console.log('我的结果是：',result2);
+		console.log('我相加结果是：',result2);
+		let num1 =10,num2=20,num3=30;
+		// 第一 求和
+		let result3 = jsq('+',num1,num2);
+		result3 = jsq('+',result3,num3);
+		console.log('总和为:',result3);
+		// 第二 计算平均值
+		let avg = jsq('/',result3,3);
+		console.log('平均值:',avg);
+		// 第三 与平均值的差
+		let num1Avg = jsq('-',num1,avg);
+		console.log('num1与平均值的差为:',num1Avg);
+		
+		function returnFunc(num){
+			if(num<10){
+				console.log('不执行任何代码');
+				// 停止整个函数
+				return; // 停止符（返回空的值）   ,return之后将不能被执行
+				
+			}
+			// 正常运行
+			console.log('执行代码');	
+		}
+		console.log(returnFunc(9));
+		///////////////////////匿名函数   没有名字的函数/////////////////////////
+		// 匿名函数
+		let nonFunc = function(){
+			console.log("我是没有名字的函数");
+		}
+		nonFunc();
+		
+		// 立即执行函数    烟花函数
+		(function(){
+			console.log('我是立马执行的函数');
+		})();
+		// 带参 立即执行函数
+		/* (function(x){
+			console.log(x,'我是立马执行的函数');
+		})('你好'); */
+		
+		// 下面两个有什么区别？
+		console.log(nonFunc); // 函数本身
+		console.log(nonFunc()); // 执行函数
+		
+		// 可以将nonFunc赋值给nonFunc2
+		let nonFunc2 = nonFunc;
+		
+	</script>
+</html>

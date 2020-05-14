@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS之全局对象</title>
+	</head>
+	<body>
+		<a href="https://www.jd.com" target="_blank">京东</a>
+		<button id="open">打开新窗口</button>
+	</body>
+	<script type="text/javascript">
+		
+		// 变量提升： var定义的变量会自动给window
+		let a=10;
+		var b=10;
+		c =11;
+		
+		console.log(a,b);
+		console.log(window.a,window.b,c,window.c);
+		
+		window.console.log('你好');
+		
+		// alert("你是谁？");
+		
+		// 确认返回true  取消返回false
+		let yes = confirm("你是不是猪，必须点是");
+		
+		// 打开一个新窗口(必须使用事件去触发)
+		document.getElementById('open').onclick = function(){
+			// 打开本地文件
+			open('i.html');
+			// 打开网络路径
+			// open('https://www.jd.com');
+		}		
+	</script>
+</html>

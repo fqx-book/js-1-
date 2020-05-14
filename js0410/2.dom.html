@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>样式</title>
+		<style>
+			p{
+				border:2px solid skyblue;
+			}
+			.txt-shadow{
+				text-shadow: 1px 3px 5px green;
+			}
+			.line{
+				line-height: 2;
+			}
+			.red{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<p>你好，我是一个段落</p>
+		<button id="addBtn">给p标签增加class -- classList</button>
+		<button id="removeBtn">给p标签移除class -- classList</button>
+		<button id="editBtn">给p标签设置class -- className</button>
+		
+	</body>
+	<script type="text/javascript">
+		
+		//////////////////////////////////////////
+		// 通过classList去增加或者移除样式在ie浏览器中是不被支持的
+		//////////////////////////////////////////
+		
+		// 取得段落标签
+		let pTag = document.querySelector('p');
+		
+		
+		// 利用className去设置所有浏览器都通用的方案
+		document.getElementById("editBtn").onclick = function(){
+			pTag.className = 'red';
+		}
+		
+		// remove按钮的事件
+		document.getElementById("removeBtn").onclick = function(){
+			// 通过classList.remove() 去除指定的class样式
+			// pTag.classList.remove('txt-shadow'); // 去除一个样式
+			pTag.classList.remove('txt-shadow','line'); // 去除多个样式
+		}
+		
+		
+		// 增加按钮的事件
+		document.getElementById("addBtn").onclick = function(){
+			// 为标签增加一个class样式
+			// pTag.classList.add('txt-shadow');
+			// 为标签增加多个class样式
+			pTag.classList.add('txt-shadow','line');
+		}		
+
+		// 通过style属性修改标签的样式
+		
+		// 等用于 style="color: hotpink;"
+		pTag.style.color="hotpink";
+		// 如果设置样式的属性存在破折号，则将之后的单词首字母大写，并且去除破折号
+		// 如：padding-left == paddingLeft    border-left == borderLeft
+		pTag.style.paddingLeft="20px";
+		
+		
+	</script>
+	
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS - 嵌套控制语句</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 男性  175cm+   65kg+			优秀
+		// 男性  165cm+	55kg+			良
+		// 女性  175cm+   60kg+			优秀
+		// 女性  165cm+	50kg+			良
+		
+		let sex='男';
+		let height= 170;
+		let weight=55;
+		/* if(sex =='男' && height>=175 && weight >=65){
+			console.log('你的个人信息属于男生组：优秀。');
+		}else if(sex 男=='' && height>=165 && weight >=55){
+			console.log('你的个人信息属于男生组：良。');
+		}else if(sex =='女' && height>=175 && weight >=60){
+			console.log('你的个人信息属于女生组：优秀。');
+		}else if(sex =='女' && height>=165 && weight >=50){
+			console.log('你的个人信息属于女生组：良。');
+		}else{ // 为防止意外输入的
+			console.log("别搞了，你不合适。")
+		} */
+		
+		if(sex ='男'){
+			if( height>=175 && weight >=65){
+				console.log('你的个人信息属于男生组：优秀。');
+			}else if(height>=165 && weight >=55){
+				console.log('你的个人信息属于男生组：良。');
+			}else{
+				console.log('你不符合男生组的条件');
+			}
+		}else if(sex =='女'){
+			if(height>=175 && weight >=60){
+				console.log('你的个人信息属于女生组：优秀。');
+			}else if(height>=165 && weight >=50){
+				console.log('你的个人信息属于女生组：良。');
+			}else{
+				console.log('你不符合女生组的条件');
+			}
+		}else{
+			console.log("你是tai国人... :(")
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>按钮切换图片</title>
+	</head>
+	<body>
+		<button id="bt1">按钮1</button>
+		<button id="bt2">按钮2</button>
+		<button id="bt3">按钮3</button>
+		<div >
+			<img id="pic"src="" >
+		</div>
+	</body>
+	<script type="text/javascript">
+		let pictal=document.getElementById("pic")
+		
+		document.getElementById("bt1").onclick=function(){
+			pictal.setAttribute('src','imgs/1.webp')
+		}
+		
+		document.getElementById("bt2").onclick=function(){
+			pictal.setAttribute('src','imgs/2.webp')
+		}
+		
+		document.getElementById("bt3").onclick=function(){
+			pictal.setAttribute('src','imgs/3.webp')
+		}
+	</script>
+</html>

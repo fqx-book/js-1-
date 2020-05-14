@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /* 
+        数组1[1,2,3,4,5]与数组2[6,7,8,9]进行合并，
+        得出数组3
+        [1,2,3,4,5,6,7,8,9]
+     */
+		let array1 = [1,2,3,4,5];
+		let array2 = [6,7,8,9];
+		// for(let i=0;i<array2.length;i++){
+		// 	array1.push(array2[i]);
+		// }
+		//console.log(array1);
+        // 第二种 通过 contact
+        let newArray = array1.concat(array2);
+        console.log(newArray);
+</script>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件</title>
+		<style>
+			.nor{
+				width:200px;
+				height: 45px;
+				border:0;
+				color:white;
+				background: linear-gradient(to bottom,skyblue,hotpink);
+			}
+			
+			.ad{
+				position: fixed;
+				top: 100px;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body style="height: 2000px;">
+		<button class="nor" id="btn">按钮</button>
+		<input id="inp" value="请输入您的银行卡密码"/>
+	</body>
+	<script type="text/javascript">
+		// 获取按钮
+		let btn =document.querySelector("button");
+		
+		// 设置双击事件  
+		btn.ondblclick=function(){
+			console.log('被点了2次');
+		}
+		
+		// 设置鼠标的进入事件
+		btn.onmouseenter = function(){
+			// 增加鼠标进入事件的逻辑
+			btn.style.boxShadow='1px 3px 5px gray';
+		}
+		
+		let inp = document.getElementById('inp');
+		// 设置输入框的得到焦点事件
+		inp.onfocus=function(){
+			// 获取输入
+			// 下面的等式必须在事件的函数中才能成立
+			// document.getElementById('inp').value == this.value
+			// 将输入框的值清空
+			this.value = '';
+		}
+		
+		// 设置输入框的失去焦点事件
+		inp.onblur = function(){
+			let val = this.value;
+			if(val.trim().length == 0 || val == null || val == undefined){
+				// 为输入框重新复制
+				this.value = '请输入您的银行卡密码';
+			}
+			
+		}
+		
+		// 设置键盘事件
+		inp.onkeydown = function(ev){
+			console.log('键盘按了一下');
+			
+			// 判断哪一个按键被按下
+			console.log('按键名称：',ev.key,'按键代码：',ev.keyCode);
+		}
+		
+		inp.onkeypress = function(){
+			console.log("键盘被住了");
+		}
+		inp.onkeyup=function(){
+			console.log('键盘被松开了');
+		}
+		
+		// 设置鼠标离开事件
+		btn.onmouseleave = function(){
+			// 增加鼠标离开事件的逻辑
+			btn.style.boxShadow='';
+		}
+		
+		/* 
+		// 这是一种获取方法
+		// 先获取标签的原有的class
+		let clName ='';
+		// 监听滚动条的事件
+		window.onscroll = function(){
+			console.log('别拉了~别拉了~');
+			console.log('滚动了：',pageYOffset,'px');
+			
+			// 代表第一次获取
+			if(clName == ''){
+				 clName = btn.className;
+			}
+			
+			// 当滚动条滚动了200px时，将按钮进行定位
+			// pageYOffset 获取y轴滚动的像素值
+			if(pageYOffset >=200){
+				
+				// 增加class
+				btn.className=clName+" ad";
+			}else{
+				// 
+				// 小于200时，回位
+				btn.className = clName;
+			}
+			
+			
+		} */
+		
+		
+		
+		// 监听滚动条的事件
+		/* 
+			onscroll 监听滚动条事件
+			
+			可以监听x轴及y轴滚动条
+			
+			pageYOffset  获取滚动条y轴的滚动距离，返回数字 单位像素
+			
+		 */
+		window.onscroll = function(){
+			console.log('别拉了~别拉了~');
+			console.log('滚动了：',pageYOffset,'px');
+			// 先获取标签的原有的class
+			let clName = btn.className;
+			
+			
+			// 当滚动条滚动了200px时，将按钮进行定位
+			// pageYOffset 获取y轴滚动的像素值
+			if(pageYOffset >=200){
+				// 增加class
+				// 没有增加过class
+				if(clName.indexOf('ad') == -1){
+					btn.className=clName+" ad";
+				}				
+			}else{
+				// 小于200时，回位				
+				btn.className = clName.replace('ad',"");
+			}
+			
+			
+		} 
+	</script>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Js之数组</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 定义一个菜单(数组)   数组中每一个数据都称为数组的元素
+		let menus = ['菜单1','菜单2','菜单3','菜单4'];
+		console.log(menus);
+		// 如何取得数组中的元素
+		// 下标(索引):位置 - 1   数组[下标]
+		// 获取数组的单个元素
+		let m = menus[0];
+		console.log(m);
+		console.log(menus[1]);
+		console.log(menus[2]);
+		// 访问数组不存在的下标元素，称之为  越界
+		console.log(menus[3]);
+		
+		console.log("--------------for-----------------");
+		//for遍历数组(一个一个的获取元素)    获取数组的长度: 数组.length
+		// console.log(menus.length);   获取数组的长度
+		for(let i=0;i<menus.length;i++){
+			let m = menus[i];
+			console.log(m);
+		}
+		console.log("--------------for in-----------------");
+		// for...in遍历数组    for in在代码层面会比for循环更加的优雅
+		// index   代表下标(索引)
+		for(let index in menus){
+			// index --->0
+			// index --->1
+			// index --->2
+			console.log(menus[index]);
+		}
+		console.log("--------------forEach-----------------");
+		// 自带循环函数    参数1：当前元素   参数2：当前元素的下标   参数3：自身数组
+		menus.forEach(function(elem,index,array){
+			console.log("当前元素：",elem);
+			console.log("当前下标：",index);
+			console.log("自身数组：",array);
+		});
+		console.log("--------------push元素后-----------------");
+		// 为数组增加新的元素（尾部追加）
+		// menus.push('菜单5');   // 一次性在尾部增加一个元素
+		 menus.push('菜单5','菜单7','菜单6');   // 一次性在尾部增加一个元素
+		for(let index in menus){
+			console.log(menus[index]);
+		}
+		console.log("--------------unshift元素后-----------------");
+		// 为数组增加新的元素（头部插入）
+		// menus.unshift('菜单0');   // 一次性在头部增加一个元素
+		 menus.unshift('菜单0','菜单-1','菜单-2');   // 一次性在尾部增加一个元素
+		for(let index in menus){
+			console.log(menus[index]);
+		}
+		// 通过下标可设置对应元素的值
+		console.log("--------------修改元素后-----------------");
+		menus[0] = '网页';
+		for(let index in menus){
+			console.log(menus[index]);
+		}
+		console.log("--------------修改元素后2-----------------");
+		// 不用push怎么在数组的末尾追加数据
+		menus[menus.length] = 'App'; 
+		for(let index in menus){
+			console.log(menus[index]);
+		}
+		// ！！！！数组的长度是动态！！！！
+		
+		
+		// 删除数组中的元素
+		menus.pop(); // 删除数组中的最后一个元素
+		console.log(' pop删除后：',menus[menus.length - 1]);
+		menus.shift(); // 删除数组中的第一个元素
+		console.log(' shift删除后：',menus[0]);
+		// 删除指定位置的元素
+		menus.splice(0,2); // 从下标0开始，删除2个元素，包含0自身
+		for(let index in menus){
+			console.log(menus[index]);
+		}
+		console.log('-------------增加元素----------------');
+		// 在指定位置增加元素   (集成删除与增加于一身的函数，)
+		/*
+		menus.length-1 开始位置
+		0 删除个数（当删除个数为0时，则不删除）
+		'菜单7.1','菜单7.2' 增加的元素
+		*/
+		menus.splice(menus.length-1,0,'菜单7.1','菜单7.2');
+		for(let index in menus){
+			console.log(menus[index]);
+		}
+		console.log('-------------new Array定义数组----------------');
+		// 定一个数字数组
+		let nums = new Array(10,1,0.5,7);
+		let nums2 = [80,80,1,0.5,07,-6];
+		console.log(nums);
+		console.log('-------------排序 nums----------------');
+		// 自定义排序规则
+		nums2=nums2.sort(function(n1,n2){
+			/* 			 
+			     如果 compareFunction(a, b) 小于 0 ，那么 a 会被排列到 b 之前；
+			 
+			     如果 compareFunction(a, b) 等于 0 ， a 和 b 的相对位置不变。备注： ECMAScript 标准并不保证这一行为，而且也不是所有浏览器都会遵守（例如 Mozilla 在 2003 年之前的版本）；
+			 
+			     如果 compareFunction(a, b) 大于 0 ， b 会被排列到 a 之前。
+			     compareFunction(a, b) 必须总是对相同的输入返回相同的比较结果，否则排序的结果将是不确定的。 
+			 */ 
+			console.log(n1," ",n2);
+			if(n1 < n2){
+				return -1;  
+			}
+		});  
+		console.log(nums2);
+		
+		// 查找一个元素在数组中第一次出现的位置(判断元素是否在数组中)
+		let indexOf = nums2.indexOf(80);
+		console.log(indexOf)
+		// 查找一个元素在数组中最后一次出现的位置(判断元素是否在数组中)
+		let lastIndexOf = nums2.lastIndexOf(80);
+		console.log(lastIndexOf);
+		
+		
+		// a-b-c-d   d是c下属，c是b的下属，b是a的下属
+		let accounts = ['a','b','c','d'];
+		let accountsCode= accounts.join('-');
+		console.log(accountsCode);
+		
+		// 截取数组的某一部分
+		// 0为开始索引，4为结束索引。 顾前不顾后 (4> x >=0)
+		let newNum = nums2.slice(0,4);
+		console.log(newNum);
+	</script>
+</html>

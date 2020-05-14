@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>解析url中的参数</title>
+	</head>
+	<body>
+		<a href="0408w4.html?name=jack&sex=m">跳转当前页面</a>
+	</body>
+	<script type="text/javascript">
+		/*
+			需求：将参数 ?name=jack&sex=m  转换为[name,sex] 和 [jack,m]
+			1/通过split('&')分割字符  ['?name=jack','sex=m']
+		*/
+		// 定义参数名称和参数值的数组
+		let pName=[],pVal=[];
+		// 获取url中的参数
+		let params = location.search;
+		// 清除 问号 ?name=jack&sex=m --->  name=jack&sex=m
+		// 获取参数集合
+		params = params.replace("?","");
+		// 通过split('&')分割字符 得到子参数： ['name=jack','sex=m']
+		let subParams = params.split('&');
+		// 再次切割子参数
+		for(let i=0;i<subParams.length;i++){
+			// 取得一个自参数   'name=jack'
+			let subParam = subParams[i];
+			// 对子参数进行切割  'name=jack' ---> ['name','jack']
+			let subParamStruct = subParam.split("=");
+			// 将参数名称放入参数名称数组中
+			pName.push(subParamStruct[0]);
+			pVal.push(subParamStruct[1]);
+		}
+		
+		console.log('原始参数： ',params,",参数名称：",pName,",参数值：",pVal);
+		
+	</script>
+</html>

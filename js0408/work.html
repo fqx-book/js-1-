@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>0407作业</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 删除组
+		let nums =[1,2,3,4,5,6,7,8,9,10];
+		// 参照组
+		let needDel = [1,3,4,5,6,20];
+		
+		// 循环参照组，将参照组中每一个元素去查看删除组中是否存在该元素
+		for(let i=0;i<needDel.length;i++){
+			// 获取参照组中的每一个元素
+			let delNum = needDel[i];
+			// 判断参照元素是否存在于删除组中
+			console.log('参照元素:',delNum,',存在于删除组的索引：',nums.indexOf(delNum));
+			
+			// 判断indexOf返回值不是-1的情况，则表明参照元素存在删除组中
+			let needDelIndex = nums.indexOf(delNum);
+			if(needDelIndex != -1){
+				nums.splice(needDelIndex,1);
+			}			
+		}
+		console.log(nums);
+	</script>
+</html>

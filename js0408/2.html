@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>字符串对象解析</title>
+	</head>
+	<body>
+		<input id="phone" /> <button id="check">验证手机号</button>
+		<input id='validCode' /> <button id="validBtn">验证是否匹配</button>
+	</body>
+	<script type="text/javascript">
+		// 为验证按钮增加一个点击事件
+		document.getElementById("check").onclick = function() {
+			// 验证手机号是否长度不合法
+
+			// 获取输入框的值
+			let phoneVal = document.getElementById("phone").value;
+			// 判断长度是否合法
+			let pLen = phoneVal.length;
+			console.log('字符串的长度（字符个数）：', pLen);
+			if (pLen == 11) {
+				console.log('手机号码的长度是合法的');
+			} else {
+				console.log('手机号码的长度是不合法的');
+			}
+		}
+
+		// 匹配验证码
+		document.getElementById('validBtn').onclick = function() {
+			// 获取验证码的值
+			let vCode = document.getElementById('validCode').value;
+			console.log('转换前：',vCode);
+
+			// 将输入框内的验证码进行小写转换(需要重新赋值)
+			vCode = vCode.toLowerCase();
+			console.log('小写转换后：',vCode);
+			
+			// 将输入框内的验证码进行大写转换(需要重新赋值)
+			// vCode = vCode.toUpperCase();
+			// console.log('大写转换后：',vCode);
+			
+			
+			// 剔除字符串首尾的无用的空格
+			vCode = vCode.trim();
+			console.log('剔除字符串空格后：',vCode);
+			
+			
+			// 匹配输入框的验证码是否等于a1b2
+			if (vCode == 'a1b2') {
+				console.log('验证成功');
+			} else {
+				console.log('验证失败，请重新输入。');
+			}
+		}
+	
+		let name ='周星光';
+		// 截取姓名中的姓   
+		/*
+			1.substring(开始索引，结束索引)   
+			截取字符串时包含开始位但是不包含结束位
+			等于 开始位 <= N < 结束位
+			截取顺序: 左 ---> 右
+			
+			2.substring(开始位)
+			从开始位一直截取到字符串的总长度
+			name.substring(1)  等于  name.substring(1,name.length)
+		*/
+		let fname = name.substring(0,1);
+		console.log("姓氏：",fname);
+		
+		// 截取名字函数
+		let lname = name.substring(1);
+		console.log('sub名字：',lname);
+		
+		// 与substring是功能相近的，但是反向是相反的
+		/*
+			slice(开始索引,结束索引);
+			截取顺序: 右 ---> 左
+			开始： -1
+			
+			截取顺序: 左 ---> 右
+			开始： 0
+			
+			总结：可以正向及逆向截取
+		*/
+		lname = name.slice(0,2);
+		console.log('slice名字：',lname);
+		
+		
+		
+		// 替换姓名中的名为 **
+		// step:  name = 周星星   周星星 ---> 周**
+		name = name.replace(name,fname+'**');
+		
+		console.log('我是',name);
+		
+		
+		
+		// 需求： a-b-c-d   含义：a是b的上级，b又是c的上级，其他以此类推
+		// 将 a-b-c-d 字符串为 [a,b,c,d] 字符串数组
+		let teamCode = 'a-b-c-d';
+		// 通过破折号(-)对字符串进行切割，使每个分割之后的字符串组成数组
+		let teamAccounts = teamCode.split('-');
+		console.log(teamAccounts);
+		
+		
+		// 敏感词替换
+		let msg = '我无fu*k说fuck';
+		// 判断f**k是否存在msg变量的字符串中
+		/*
+			let word = 'abcdeffedcba';
+			
+			word.indexOf('a'); // 返回 0
+			word.indexOf('fa'); // 返回 -1
+			word.indexOf('a',1); // 11
+			
+			indexOf(需要寻找的字符)
+			判断指定字符在字符串中第一次出现的位置			
+			indexOf(需要寻找的字符,指定索引之后开始)
+			判断指定字符在字符串指定索引后第一次出现的位置	
+		*/
+		let existsIndex = msg.indexOf('fu',3);
+		console.log("敏感词出现的位置：",existsIndex);
+		
+		
+		// 截取文件的格式
+		let filename ='阿.凡.达.mp4';
+		let lastIndex = filename.lastIndexOf('.');
+		console.log('判断.最后出现的位置:',lastIndex);
+		
+		
+		let zs = '张三丰';
+		// 判断字符串是不是以某一个字符串作为开始
+		let start = zs.startsWith('张');
+		// 判断字符串是不是以某一个字符串作为结尾
+		let end =zs.endsWith('三x');
+		console.log("你是不是姓张：",start);
+		console.log("你是不是三：",end);
+		
+	</script>
+</html>

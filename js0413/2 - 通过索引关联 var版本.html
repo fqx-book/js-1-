@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js - 选项卡</title>
+		<style>
+			/* 消除列表的默认样式 */
+			li{
+				list-style: none;
+			}
+			.menu{
+				width:95px;
+				height: 40px;
+				border:1px solid black;
+				
+				float:left;
+				
+				text-align: center;
+				line-height: 40px;
+			}
+			.menu:hover{
+				cursor: pointer;
+			}
+			
+			.cb{
+				clear:both;
+			}
+			
+			.box{
+				width:388px;
+				border:1px solid black;
+				height:400px;
+			}
+			
+			.show{
+				display: block;
+			}
+			.hide{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="menus">
+			<li id="m1" class="menu">菜单1</li>
+			<li id="m2" class="menu">菜单2</li>
+			<li id="m3" class="menu">菜单3</li>
+			<li id="m4" class="menu">菜单4</li>
+			<li class="cb"></li>
+		</ul>
+		<ul id="boxs">
+			<li id="b1" class="box hide">框1</li>
+			<li id="b2" class="box hide">框2</li>
+			<li id="b3" class="box hide">框3</li>
+			<li id="b4" class="box hide">框4</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		/*
+			问题：var造成的问题，i变量遭污染。
+			解决：在为菜单设置点击事件时，将自身的索引放入标签属性中
+		*/
+		
+		// 1. 获取所有的框框
+		let boxs = document.querySelectorAll('#boxs li');
+		
+		// 2. 获取所有的菜单
+		let menus = document.querySelectorAll('#menus li');
+		for(var i=0;i<menus.length;i++){
+			// 获取某一个菜单，并且设置点击事件
+			console.log('索引：',i);
+			menus[i].setAttribute('data-index',i);
+			menus[i].onclick = function(){
+				// 从自身标签中的data-index属性中获取正确的索引
+				// this代表当前点击的菜单标签
+				var boxIndex = this.getAttribute('data-index');
+				// 唤醒对应的框框
+				var bTag= boxs[boxIndex];
+				var classList =bTag.className;
+				// 2.消除hide的class样式，让框框显示出来
+				bTag.className = classList.replace('hide','');
+				
+				// 隐藏其他框框
+				for(var j=0;j<boxs.length;j++){
+					// 条件：当i == j时，就不处理
+					if( boxIndex != j){
+						// 隐藏框
+						var otherBTag= boxs[j];
+						var classList =otherBTag.className;
+						// 2.增加hide的class样式，让框框隐藏起来
+						// 如果当前框已经拥有hide的样式则不继续增加hide样式
+						if(classList.indexOf('hide') == -1){
+							otherBTag.className = classList + ' hide';
+						}						
+					}
+				}
+			}	
+					
+			
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS之循环</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 我是1号，我是2号，我是3号，我是4号...   7个学生
+
+		//初始语句
+		// 先判断再执行
+		let studentCount = 1;
+		while (studentCount < 8) {
+			console.log('我是', studentCount, "号");
+			// 迭代语句
+			// studentCount+=1;
+			// 等用于 studentCount+=1; 等同于 studentCount=studentCount+1;
+			// 自增  自身+1
+			studentCount++;
+		}
+
+		// 初始条件时8，显示出 我是8号，我是7号，我是6号，我是5号...   7个学生
+		let sc = 8;
+		while (sc > 0) {
+			console.log('w 我是', sc, "号");
+			// 自减 自身减1
+			sc--;
+		}
+
+		// do...while循环
+		// 先执行再判断
+		let count = 9;
+		do {
+			console.log('dw 我是', count, '号');
+			count++;
+		} while (count < 9);
+		console.log('我是dw的count：', count);
+
+
+		// for循环  i在for循环的循环体正常使用，离开则未定义
+		for (let i = 1; i < 8; i++) {
+			console.log('f 我是', i, '号');
+		}
+		// console.log('我是f 的i ',i);
+
+
+		let day = true;
+		/* while(day){
+			console.log('现在是白天');
+		} */
+		// 变体for   只要条件语句存在，则可以正常循环
+		let i = 0;
+		for (; true;) {
+			if (i == 3) {
+				break;
+			}
+			i++;
+			console.log("for = true");
+		}
+
+		// 0~10之间所有偶数的总和
+		let sum = 0;
+		for (let j = 0; j < 11; j++) {
+			if (j % 2 != 0) { //偶数
+				// 不需要往下执行
+				continue;
+			}
+			sum += j;
+		}
+		console.log('0~10之间所有偶数的总和:',sum);
+		
+		
+		for(let j=1;j<10;j++){
+			console.log('我是',j,'号');
+			if(j == 5){
+				break;
+			}
+			console.log('我是break以后的代码');
+		}
+		
+		// 嵌套循环
+		for(let j =1;j<3;j++){			
+			for(let k=1;k<3;k++){ 
+				console.log('nf 我的座位是',j,'-',k);
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>form表单</title>
+	</head>
+	<body>
+		<!-- 
+		 form标签的作用：
+		 1、登录
+		 2、搜索
+		 3、提交数据
+		 -->
+		<form>
+			<!--  普通输入框  -->
+			<input id="inp" value="哈哈哈" />
+			<input id="pwd" type="password" value="哈哈哈" />
+			<select id="addr">
+				<option>请选择地址</option>
+				<option value="gx">广西</option>
+				<option value="gd" selected>广东</option>
+				<option value="gn">广南</option>
+				<!--  selected默认选中项 -->
+				<option value="gb">广北</option>
+			</select>
+		</form>
+		<p id="txt">---<span>+++</span></p>
+		<p id="txt2">---<span>+++</span></p>
+	</body>
+	<script type="text/javascript">
+		// 获取输入框的值
+		let inputVal = document.getElementById("inp").value;
+		console.log('输入框内的值：', inputVal);
+
+		// 获取密码框的值
+		let pwdVal = document.getElementById('pwd').value;
+		console.log('密码框的值：', pwdVal);
+
+		// 获取所有下拉选项
+		let optionList = document.getElementById("addr").options;
+		console.log(optionList);
+
+		// 获取选择项的索引
+		let selIndex = optionList.selectedIndex;
+		console.log('下拉框选中项的索引为：', selIndex);
+
+		// 获取下拉框选中的项
+		let selectOption = optionList[selIndex];
+		console.log('选中的下拉项：', selectOption);
+
+		// 获取下拉框选中项的值
+		console.log('拉框选中项的值:', selectOption.value);
+
+		/*
+			innerText将会以纯文本的形式进行获取和修改
+			
+			1、当标签中没有文字时可以通过innerText去填充文本
+			2、当标签中有文字时，将会覆盖原有的文字和标签
+			
+			// 覆盖标签的文本内容
+			document.getElementById('txt').innerText = "我出来了吗？";
+			// 获取标签的文本内容(自身+所有子标签)
+			let pTxt = pTag.innerText;
+		*/
+		// 获取标签的文本内容
+		let pTag = document.getElementById('txt');
+		let pTxt = pTag.innerText;
+		console.log('p标签的内容：', pTxt);
+		// 修改标签的文字内容
+		pTag.innerText = "我出来了吗？<b>+++</b>";
+		
+		
+		/*
+			innerHTML将会以HTML代码的形式进行获取和设置
+			
+			1.innerHTML与innerText之间的区别为：
+				1.1 innerText会修改文本
+				1.2 innerHTML会修改
+				
+			2.两个都会覆盖自身及子标签的所有内容
+			
+			// 设置标签的代码
+			pTag2.innerHTML = "我出来了吗？<b>+++</b>";
+			// 获取标签的代码
+			console.log(pTag2.innerHTML);
+		*/
+		let pTag2 = document.getElementById('txt2');
+		pTag2.innerHTML = "我出来了吗？<b>+++</b>";
+		console.log(pTag2.innerHTML);
+	</script>
+</html>

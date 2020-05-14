@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				list-style: none;
+			}
+			.menu{width:95px;
+				height: 40px;
+				border:1px solid black;
+				
+				float:left;
+				
+				text-align: center;
+				line-height: 40px;
+			}
+			.cb{
+				clear:both;
+			}
+			.menu:hover{
+				cursor: pointer;
+			}
+			.box{
+				width:388px;
+				border:1px solid black;
+				height:400px;
+			}
+			.hide{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="menus">
+			<li id="m1" class="menu">菜单1</li>
+			<li id="m2" class="menu">菜单2</li>
+			<li id="m3" class="menu">菜单3</li>
+			<li id="m4" class="menu">菜单4</li>
+			<li class="cb"></li>
+		</ul>
+		<ul id="boxs">
+			<li id="b1" class="box hide">框1</li>
+			<li id="b2" class="box hide">框2</li>
+			<li id="b3" class="box hide">框3</li>
+			<li id="b4" class="box hide">框4</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		let boxs = document.querySelectorAll('#boxs li');
+		let menus = document.querySelectorAll('#menus li');
+		for(let i=0;i<menus.length;i++){
+			menus[i].onclick = function(){
+				let bTag= boxs[i];
+				let classList =bTag.className;
+				bTag.className = classList.replace('hide','');
+			
+		for(let j=0;j<boxs.length;j++){
+			if( i != j){
+						
+			let otherBTag= boxs[j];
+			let classList =otherBTag.className;
+						
+			if(classList.indexOf('hide') == -1){
+				otherBTag.className = classList + ' hide';
+						}						
+					}
+			}
+			}
+		}
+	</script>
+</html>

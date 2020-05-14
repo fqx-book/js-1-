@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js - 选项卡</title>
+		<style>
+			/* 消除列表的默认样式 */
+			li{
+				list-style: none;
+			}
+			.menu{
+				width:95px;
+				height: 40px;
+				border:1px solid black;
+				
+				float:left;
+				
+				text-align: center;
+				line-height: 40px;
+			}
+			.menu:hover{
+				cursor: pointer;
+			}
+			
+			.cb{
+				clear:both;
+			}
+			
+			.box{
+				width:388px;
+				border:1px solid black;
+				height:400px;
+			}
+			
+			.show{
+				display: block;
+			}
+			.hide{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="menus">
+			<li id="m1" class="menu">菜单1</li>
+			<li id="m2" class="menu">菜单2</li>
+			<li id="m3" class="menu">菜单3</li>
+			<li id="m4" class="menu">菜单4</li>
+			<li class="cb"></li>
+		</ul>
+		<ul id="boxs">
+			<li id="b1" class="box hide">框1</li>
+			<li id="b2" class="box hide">框2</li>
+			<li id="b3" class="box hide">框3</li>
+			<li id="b4" class="box hide">框4</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		// 1. 获取所有的框框
+		let boxs = document.querySelectorAll('#boxs li');
+		
+		// 2. 获取所有的菜单
+		let menus = document.querySelectorAll('#menus li');
+		for(let i=0;i<menus.length;i++){
+			// 获取某一个菜单，并且设置点击事件
+			menus[i].onclick = function(){
+				// 唤醒对应的框框
+				let bTag= boxs[i];
+				let classList =bTag.className;
+				// 2.消除hide的class样式，让框框显示出来
+				bTag.className = classList.replace('hide','');
+				
+				// 隐藏其他框框
+				for(let j=0;j<boxs.length;j++){
+					// 条件：当i == j时，就不处理
+					if( i != j){
+						// 隐藏框
+						let otherBTag= boxs[j];
+						let classList =otherBTag.className;
+						// 2.增加hide的class样式，让框框隐藏起来
+						// 如果当前框已经拥有hide的样式则不继续增加hide样式
+						if(classList.indexOf('hide') == -1){
+							otherBTag.className = classList + ' hide';
+						}						
+					}
+				}
+			}	
+					
+			
+		}
+		
+	</script>
+</html>
+2589998363@qq.com

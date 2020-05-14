@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input id="num" /> <button id="btn">判断奇、偶数</button>
+		<br />
+		<input id="score" /> <button id="btn2">判断学分登记</button>
+		
+	</body>
+	<script type="text/javascript">
+		// 判断学分按钮
+		document.getElementById('btn2').onclick=function(){
+			// 获取输入框的值
+			var inputVal = document.getElementById('score').value;
+			
+			if(inputVal < 60 && inputVal >=0){
+				alert("不合格");
+			}else if(inputVal <70 && inputVal >=60){
+				alert("B-");
+			}else if(inputVal <80 && inputVal >=70){
+				alert("B");
+			}else if(inputVal <90 && inputVal >=80){
+				alert("B+");
+			}else if(inputVal <=100 && inputVal >=90){
+				alert("A+");
+			}else{
+				alert("别搞~~~");
+			}
+		}
+		
+		// 判断奇偶数按钮
+		document.getElementById('btn').onclick=function(){
+			// 获取输入框的值
+			var inputVal = document.getElementById('num').value;
+			// 取余，并且判断
+			var result = inputVal%2;
+			// 显示结果
+			if(result ==0){// 当 result ==0 满足条件时，则执行代码
+				alert('你输入的是   偶数');
+			}else{ // 当if条件不成立执行				
+				alert('你输入的是   奇数');
+			}
+		}
+		
+		
+		var money = 9;
+		var score=60;
+		var buyCount = 100;
+		// 如果金额 >= 100 或者score >50
+		
+		if(money >=10 || score > 50 || buyCount >= 200){
+			console.log("能买牙膏");
+		}else{
+			console.log("您没有购买资格");
+		}
+		
+		// !1==1   等同于  1!=1  非true
+		console.log(1==1);
+		console.log(1!=1);
+		console.log(!1==1);
+		
+		let txt ="我好开心，学了新东西";
+		var txt2= "学习使我快乐";
+		console.log(txt);
+		console.log(txt2);
+	</script>
+</html>

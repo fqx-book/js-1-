@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM编程</title>
+		<style>
+			/* 类选择器 */
+			.t{
+				font-size:20px;
+			}
+			/* id选择器 */
+			#desc{
+				color:hotpink;
+			}
+			/* :first-child 第一个子元素 */
+			#desc span:first-child{
+				color:skyblue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- id不要重复 -->
+		<p id="desc" class="t">DOM的出现就是为了与<span>HTML</span>页面有<span>交互操作</span></p>
+		<p id="desc2" class="t">我是一个普通的段落</p>
+		<ul>
+			<li>列表项1</li>
+			<li>列表项2</li>
+			<li>列表项3</li>
+			<li>列表项4</li>		
+		</ul>
+	</body>
+	<!-- 
+		如果没有窗体的加载事件，
+		script在body渲染完成之前执行的话，
+		会造成标签不存在的错误
+	 -->
+	<script type="text/javascript">
+			// 窗体加载完成事件 ，事件必定会有回调
+			// 等整个页面都加载完成后在执行这个函数的代码
+			window.onload=function(){
+				// 通过id获取标签
+				let tag = document.getElementById("desc");
+				console.log(tag);
+				tag.onclick=function(){
+					alert("我认同你的看法");
+				}
+				
+				console.log('------------------');
+				// 通过标签名获取标签(获取全部符合的标签)
+				let pList = document.getElementsByTagName('p');
+				console.log(pList);
+				
+				// 通过class名称获取标签(获取全部符合的标签)
+				let pList2 = document.getElementsByClassName('t');
+				console.log(pList2);
+				
+				// 通过CSS选择器获取标签
+				// querySelector将会获取符合条件的第一个标签
+				let span = document.querySelector('#desc span');
+				console.log(span);
+				console.log('------------------');
+				// querySelectorAll将会获取符合条件的所有标签
+				let spanList = document.querySelectorAll('#desc span');
+				console.log(spanList);
+				
+				
+				// 修改html的css
+				let liTag = document.querySelector('ul li');
+				// cssText就像写行内样式：
+				liTag.style.cssText="color:hotpink; font-weight: bold;";
+			}
+		</script>
+</html>

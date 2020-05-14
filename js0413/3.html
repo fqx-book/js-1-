@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js - 轮播图</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+			.main{
+				width:590px;
+				height: 466px;
+				border:1px solid deeppink;
+				position: relative;
+				
+				margin-left: auto;
+				margin-right: auto;
+				
+				overflow: hidden;
+			}
+			.btn{
+				width:50px;
+				height: 20px;
+				border:0;
+				background: #FF1493;
+				color:white;
+				font-weight: bold;
+				font-size: 18x;
+				position: absolute;
+				top:50%;
+				outline: 0;
+				cursor:pointer;
+			}
+			
+			.left-btn{
+				left: 0;
+				border-radius: 0px 10px 10px 0px;
+			}
+			
+			.right-btn{
+				right: 0;
+				border-radius: 10px 0px 0px 10px;
+			}
+			
+			.full-left{
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<!-- 
+				html中的特殊字符
+				 &lt;   < 小于号
+				 &gt;   < 大于号
+			 -->
+			<button class="btn left-btn"> &lt; </button>
+			<button class="btn right-btn"> &gt; </button>
+			<ul style="width:2000px; margin-left: 0px;" id="pics">
+				<li class="full-left"><img src="imgs/1.webp"/></li>
+				<li class="full-left"><img src="imgs/2.webp"/></li>
+				<li class="full-left"><img src="imgs/3.webp"/></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 获取到图片集对象
+		let pics = document.getElementById('pics');
+		
+		/* 为上一张和下一张设置对应事件 */
+		document.querySelector('.left-btn').onclick=function(){
+			// 显示上一张的图片
+			// 先获取原本marginleft的值，然后再叠加590
+			let oldML = parseInt(pics.style.marginLeft);
+			console.log(oldML);
+			// 判断当前图片是否为第二张
+			if(oldML < 0 ){
+				// .style.样式名称 此种方式只能读取标签中style属性设置的样式
+				// parseInt() 解析字符串的数字（整形）
+				// parseFloat() 解析字符串的数字（浮点形）
+				// 显示下一张的图片
+				pics.style.marginLeft=(oldML+590)+"px";
+			}
+		}
+		
+		document.querySelector('.right-btn').onclick=function(){
+			// 先获取原本marginleft的值，然后再减少590
+			let oldML = parseInt(pics.style.marginLeft);
+			console.log(oldML);
+			// 判断当前图片是否为倒数第二张
+			if(oldML > -(590*2)){
+				// .style.样式名称 此种方式只能读取标签中style属性设置的样式
+				// parseInt() 解析字符串的数字（整形）
+				// parseFloat() 解析字符串的数字（浮点形）
+				// 显示下一张的图片
+				pics.style.marginLeft=(oldML-590)+"px";
+			}
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM</title>
+	</head>
+	<body>
+		<p>我是普通段落</p>
+		<div>
+			<p>我是div里面的段落</p>
+		</div>
+		
+		
+		<body>
+			<p class="txt">我是普通段落</p>
+			<div>
+				<p class="text">我是div里面的段落</p>
+				<p class="txt">我是div里面的段落2</p>
+			</div>
+		</body>
+	</body>
+	<script type="text/javascript">
+		// 1 获取下列标签中的所有p标签，并且设置字体颜色为红色
+		// 通过标签名获取标签对象
+		// let pList = document.getElementsByTagName('p');
+		let pList = document.querySelectorAll("p");
+		for(let i=0;i<pList.length;i++){
+			// 取得某一个p标签
+			let pTag =pList[i];
+			pTag.style.cssText='color:red;';
+		}
+		
+		
+		// let pList = document.getElementsByClassName('txt');
+		pList = document.querySelectorAll(".txt");
+		for(let i=0;i<pList.length;i++){
+			// 取得某一个p标签
+			let pTag =pList[i];
+			pTag.style.cssText='color:red;';
+		}
+	</script>
+</html>
