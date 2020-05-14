@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="cancel">取消定时器</button>
+</body>
+<script>
+    /* 
+        setInterval 的基本使用 重复执行的
+        timeID = setInterval(回调函数,时间，参数列表)
+     */
+    function callBack(a,b){
+        console.log("写代码是一件非常快乐的事情");
+        console.log(a,b);
+    }
+    // 获取timeID
+    let timeID = setInterval(callBack,500,"😊","😊");
+    document.getElementById("cancel").addEventListener("click",function(e){
+        clearInterval(timeID);
+    })
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="top" align="center">
+        top
+        <button id="delete">删除子结点</button>
+        <div id="nested">
+            子节点
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("delete").addEventListener("click",function(){
+        // 获取子结点
+        let child = document.getElementById("nested");
+        // 通过父结点 移除 子结点
+        document.getElementById("top").removeChild(child);
+    })
+
+</script>
+
+</html>

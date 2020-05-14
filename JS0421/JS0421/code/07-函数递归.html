@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+        函数的递归 
+     */
+    // 无限打印 “我❤️你”
+    //  第一种方式
+    //  function print(){
+    //      while(1){
+    //          console.log("我❤️你");
+    //      }
+    //  }
+    //  print();
+    // 如果是用递归如何实现？
+    //  function print(){
+    //     console.log("我❤️你");
+    //     //  递归调用
+    //     print();
+    //  }
+    //  print();
+    // 如何停止递归
+    // 循环终止的方式
+    function print(n) {
+        let i = 0;
+        while (1) {
+            if (i > n)
+                break;
+            console.log("我❤️你");
+            i++;// 步长加1 
+        }
+    }
+    print(5);
+    // 终止递归
+    function print(n) {
+        if (n == 0) {
+            return;
+        }
+        console.log("我❤️你");
+        //  递归调用
+        print(n - 1);
+    }
+    print(5);
+</script>
+
+</html>

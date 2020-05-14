@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /* 
+        arguments  对象
+     */
+    //  function sayHello(name1,name2,name3){
+    //      console.log("大家好:",name1,name2,name3);
+    //  }
+    //  sayHello("宗伟","王锦","树鹏");
+     // 不知道多少个参数的情况下 全部给输出来
+    function sayHello(){
+        for(let i=0;i<arguments.length;i++){
+            console.log(arguments[i]);
+        }
+    }
+    sayHello("宗伟","王锦","树鹏","全喜","赵峰","金钊");
+    // 在全局 输出arguments
+   // console.log(arguments); 报错
+</script>
+</html>

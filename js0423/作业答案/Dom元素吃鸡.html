@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吃鸡练习</title>
+</head>
+
+<body>
+    <div>
+        <button id="btn1">将吃鸡放到所有城市后面</button>
+        <button id="btn2">将吃鸡放到所有城市前面</button>
+        <button id="btn3">将吃鸡放到上海的后面</button>
+        <button id="btn4">将吃鸡放到上海的前面</button>
+        <button id="btn5">删除北京</button>
+        <button id="btn6">删除所有节点</button>
+    </div>
+    <ul>
+        <li id="beijing">北京</li>
+        <li id="shanghai">上海</li>
+        <li id="zhengzhou">郑州</li>
+        <li id="chiji">吃鸡</li>
+        <li id="wangzherongyao">王者荣耀</li>
+    </ul>
+</body>
+<script>
+    let chijiPN = document.getElementById('chiji').parentNode;//获取 父节点 ul
+    let chiji = document.getElementById('chiji');//获取吃鸡的id
+
+    //将吃鸡放到所有城市后面
+    let btn1 = document.getElementById('btn1');
+    btn1.onclick = function () {
+        let wangzherongyao = document.getElementById('wangzherongyao');
+        chijiPN.insertBefore(chiji, wangzherongyao);
+    }
+    //将吃鸡放到所有城市前面
+    let btn2 = document.getElementById('btn2');
+    btn2.onclick = function () {
+        // chijiPN.firstChild 父结点 第一个元素 
+        chijiPN.insertBefore(chiji, chijiPN.firstChild);
+    }
+    //将吃鸡放到上海的后面
+    let btn3 = document.getElementById('btn3');
+    btn3.onclick = function () {
+        let zhengzhou = document.getElementById('zhengzhou');
+        chijiPN.insertBefore(chiji, zhengzhou);
+    }
+    //将吃鸡放到上海的前面
+    let btn4 = document.getElementById('btn4');
+    btn4.onclick = function () {
+        let shanghai = document.getElementById('shanghai');
+        chijiPN.insertBefore(chiji, shanghai);
+    }
+
+
+    //删除北京
+    let btn5 = document.getElementById('btn5');
+    btn5.onclick = function () {
+        let beijing = document.getElementById('beijing');
+        try {
+            chijiPN.removeChild(beijing);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    //删除所有节点
+    let btn6 = document.getElementById('btn6');
+    btn6.onclick = function () {
+        // chijiPN.firstChild 父元素 第一个结点
+        while (chijiPN.firstChild) {
+            chijiPN.removeChild(chijiPN.firstChild);
+        }
+        let button = document.getElementsByTagName('button');
+        for (let i = 0; i < button.length; i++) {
+            // 给所有按钮 设置 不能点击的属性
+            button[i].setAttribute('disabled', '');
+        }
+    }
+
+
+</script>
+
+</html>

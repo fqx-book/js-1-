@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+        构建一个计算器函数：参数（计算法则，数字1，数字2）、
+        构建一个计算平均值函数，在函数中执行 
+        1.求和，2.求平均数，3.求每个数字与平均数的差
+     */
+    /* 
+          四则运算 计算器
+     */
+    function calc(rule, n1, n2) {
+        switch (rule) {
+            case '+':
+                return n1 + n2;
+                break;
+            case '-':
+                return n1 - n2;
+                break;
+            case '*':
+                return n1 * n2;
+                break;
+            case '/':
+                return n1 / n2;
+                break;
+        }
+    }
+    // 求平均数 
+    function avg() {
+        let num1 = 5, num2 = 10;
+        let result = calc('+', num1, num2);
+        console.log(result);// 15
+        let avgVal = calc('/', result, 2);
+        console.log(avgVal);// 7.5
+        let n1AvgDiff = calc('-', num1, avgVal); // -2.5
+        let n2AvgDiff = calc('-', num2, avgVal); // 2.5
+        console.log('num1与平均值的差:', n1AvgDiff);
+        console.log('num2与平均值的差:', n2AvgDiff);
+    }
+    avg();
+</script>
+
+</html>

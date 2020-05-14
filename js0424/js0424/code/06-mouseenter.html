@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 12px;
+            color: #000;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            border: 0px;
+        }
+
+        #ul {
+            width: 300px;
+            background-color: aquamarine;
+            border: 3px groove green;
+            margin: 0px auto;
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <button id="xiaokonglong">小恐龙</button>
+
+    </ul>
+</body>
+<script>
+    // 获取 点击元素 
+    let div = document.getElementsByTagName("div")[0];
+    document.getElementById("xiaokonglong").addEventListener("click", function () {
+        div.innerHTML = "<img src='http://img3.imgtn.bdimg.com/it/u=1447484981,124038508&fm=26&gp=0.jpg'></img>";
+    })
+    // mouseenter 事件
+    document.getElementById("xiaokonglong").
+        addEventListener('mouseenter', function (e) {
+            console.log(e);
+        })
+</script>
+
+</html>

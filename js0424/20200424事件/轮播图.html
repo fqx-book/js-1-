@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #fade{
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        position: relative;
+		
+    }
+	h2{text-align:center}
+    </style>
+</head>
+<body>
+    <h2>轮播图</h2>
+    <div id="fade">
+        <img src="img/1.jpg" width="100%" height="100%" id="lunbo" >
+    </div>
+    <script>
+        let lb = document.getElementById("lunbo");
+        let num=1;
+		function lunbo(){
+			num++;
+			if(num >6){
+				num = 1;
+			}
+			lb.src="img/"+num+".jpg"
+		}
+       setInterval(lunbo,1000)
+    </script>
+</body>
+</html>

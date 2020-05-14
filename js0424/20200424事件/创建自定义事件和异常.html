@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p">事件源</p>
+    <button id="btn">点击触发自定义事件</button>
+</body>
+<script>
+    /* 
+        创建自定义事件
+     */
+    // let event = new Event("我是自定义事件");
+
+    //要向事件对象添加更多数据，可以使用 CustomEvent，detail 属性可用于传递自定义数据
+    //CustomEvent 接口可以为 event 对象添加更多的数据
+    let customEvent = new CustomEvent('我是自定义事件', { 'detail': {
+        names:"疾风剑豪"
+    }});
+    // 绑定自定义事件 到元素上
+    document.getElementById("p").addEventListener("我是自定义事件", function (e) {
+        console.log(e);
+    })
+    document.getElementById("btn").addEventListener("click", function () {
+        document.getElementById("p").dispatchEvent(customEvent);
+    })
+    //dispatchEvent   触发自定义事件的方法
+
+
+
+    //捕捉异常事件
+    try {
+        demo();// 报错
+    } catch (error) {
+        console.log(error);
+    }finally{
+        console.log("%c异常","color:pink"); // 无论是否发生异常 都会执行
+    }
+    console.log("呵呵"); 
+</script>
+</html>

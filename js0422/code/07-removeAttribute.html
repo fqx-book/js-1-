@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button name="😊">移除😊的属性</button>
+    <button>使按钮可点击</button>
+    <button disabled>变成可点击</button>
+</body>
+<script>
+    // 获取所有按钮
+    let btns = document.querySelectorAll("button");
+    console.log(btns);
+    // 设置属性
+    btns[0].addEventListener("click",function(){
+        btns[0].removeAttribute("name");
+    })
+    // 设置按钮不可点击
+    btns[1].addEventListener("click",function(){
+        // 第三个按钮 变成可点击
+        btns[2].removeAttribute("disabled");
+    })
+
+</script>
+
+</html>

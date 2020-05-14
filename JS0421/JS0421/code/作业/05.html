@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+        构建一个函数：参数（身高，体重，年龄）。
+        函数执行：如果年龄<18并且身高<170cm(&&)
+        或者(||)年龄<18并且体重<60kg则返回0(0为不合格)，
+        如果满足条件则返回1(1为合格)。
+        并且根据返回值在页面上输出，条件合格/条件不合格
+     */
+    function showInfo(height, weight, year) {
+        if (height < 170 && year < 18 || year < 18 && weight < 60) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    // 执行的结果
+    // let result = showInfo(160, 60, 18);
+    (function () {
+        let result = showInfo(160, 60, 17);
+        if (result == 0) {
+            console.log('不合格');
+        } else {
+            console.log('合格');
+        }
+    })()
+	
+	(function () {
+	    let result2 = showInfo(180, 60, 17);
+	    if (result2 == 0) {
+	        console.log('不合格');
+	    } else {
+	        console.log('合格');
+	    }
+	})()
+
+</script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="iege">
+    <title>Document</title>
+</head>
+<body>
+    <p style="font-size: 100px;" id="content">我是科兴园的人</p>
+    <button id="redBtn">变红</button>
+    <button id="blueBtn">变蓝</button>
+    <p style="font-size: 100px;">copyright@猿码科技</p>
+</body>
+<script>
+    /* 
+        实现一个需求：
+        页面上 有两个按钮，点击红色按钮，文本变红；点击蓝色按钮，文本变蓝。
+     */
+    // 获取内容值
+    //let content = document.querySelector("#content"); 
+    let content = document.querySelectorAll("p")[0]; 
+    // 获取变红的按钮
+    let redBtn = document.querySelector("#redBtn");
+    // 获取变蓝的按钮
+    let blueBtn = document.querySelector("#blueBtn");
+    redBtn.addEventListener("click",function(){
+        content.style.color = "red";
+    })
+    // 给蓝色按钮添加事件
+    blueBtn.addEventListener("click",function(){
+        content.style.color = "blue";
+    })
+    console.log(content);
+
+
+
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+        计算阶乘 例子
+        输入：n 
+        输出 　n*(n-1)(n-2).....1
+        例如 n = 3 
+        结果:3*2*1 = 6
+     */
+    // 第一种方式
+    function fac(n) {
+        // 定义一个 result
+         let result = 1;
+        for (let i = 1; i <= n; i++){
+            result = result * i;
+            // result = 1*1  result === 1
+            // result = 2*1  result === 2
+            // result = 3*2  result = 6;
+        }
+        return result;
+    }
+    console.log(fac(3));
+</script>
+
+</html>

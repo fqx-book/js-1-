@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>图片轮播</title>
+</head>
+
+<body>
+	<img id="photo" style="width: 500px; height: 500px;" src="img\1.jpg" />
+</body>
+<script>
+	//设置i的值
+	let i = 0;
+	//重复调用该函数，每1秒执行一次
+	setInterval(function () {
+		//获取图片的id
+		let photo = document.getElementById('photo');
+		//判断i大于图片数量让它从0开始
+		if (i >= 5) {
+			i = 0;
+		} else {
+			//i每次先自增
+			i++;
+			//设置img里面src属性的值
+			photo.src = './img/' + i + '.jpg'
+		}
+	}, 1000);
+</script>
+
+</html>

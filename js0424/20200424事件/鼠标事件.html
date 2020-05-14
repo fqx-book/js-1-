@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       button{width: 100px;height: 50px;}
+       .dj{font-size: 30px;color: blue;}
+       .sj{font-size: 30px;color: red;}
+       .nx{font-size: 30px;color: green;}
+       .jr{font-size: 30px;color: yellow;}
+       .yc{font-size: 30px;color: blueviolet;}
+       .yd{font-size: 30px;color: gold;}
+    </style>
+</head>
+<body>
+
+    <p id="ps1">禁用右键</p>
+    <br /><br />
+    <p id="ps2">这是一个工具人</p>
+    <br /><br />
+    <p id="ps3">这是另外一个工具人</p>
+    <br /><br />
+    <p id="ps4">这是工具人3</p>
+    <br /><br />
+    <p id="ps5">这是工具人4</p>
+    <div>
+    <button id="btn1">鼠标单击事件click</button>
+    <button id="btn2">双击事件dbclick</button>
+    <button id="btn3">鼠标按下事件mousedown</button>
+    <button id="btn4">鼠标进入事件mouseseenter</button>
+    <button id="btn5">鼠标移出事件mouseleave</button>
+    <button id="btn6">鼠标移动事件mousemove</button>
+    <button id="btn7">鼠标事件mouseover</button>
+    <button id="btn8">鼠标事件mouseout</button>
+    <button id="btn9">鼠标事件mouseup</button>
+    </div>
+
+   
+</body>
+<script>
+        let gjr = document.getElementById("ps2");
+        let gjr2 = document.getElementById("ps3");
+        let gjr3 = document.getElementById("ps4");
+        let gjr4 = document.getElementById("ps5");
+    //单击事件
+     let danji = document.getElementById("btn1");
+     danji.addEventListener("click",function(){
+        gjr.setAttribute("class","dj");
+     })
+
+     //双击事件
+     let shuangji = document.getElementById("btn2");
+     shuangji.addEventListener("dblclick",function(){
+        gjr.setAttribute("class","sj");
+     })
+
+     //鼠标按下事件
+     let anxia = document.getElementById("btn3");
+     anxia.addEventListener("mousedown",function(){
+         gjr.setAttribute("class","nx")
+     })
+
+     //鼠标进入事件
+     let jinru = document.getElementById("btn4");
+     jinru.addEventListener("mouseenter",function(){
+         gjr.setAttribute("class","jr")
+     })
+
+     //鼠标移除事件
+     let yichu = document.getElementById("btn5");
+     yichu.addEventListener("mouseleave",function(){
+         gjr.setAttribute("class","yc")
+     })
+
+     //鼠标移动事件
+     let yidong = document.getElementById("btn6");
+     yidong.addEventListener("mousemove",function(){
+         gjr.setAttribute("class","yd")
+     })
+
+     //mouseover  指针移到有事件监听的元素或者它的子元素内。
+     let mo = document.getElementById("btn7");
+     mo.addEventListener("mouseover",function(){
+         gjr2.setAttribute("class","dj")
+     })
+
+     //mouseout  指针移出元素，或者移到它的子元素上。
+     let mt = document.getElementById("btn8");
+     mt.addEventListener("mouseout",function(){
+        gjr3.setAttribute("class","jr")
+     })
+
+     //mouseup 在元素上任意鼠标按键
+     let mu = document.getElementById("btn9");
+     mu.addEventListener("mouseup",function(){
+        gjr4.setAttribute("class","nx")
+     })
+
+</script>
+</html>

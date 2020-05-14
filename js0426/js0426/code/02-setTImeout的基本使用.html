@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">开启定时器😊</button>
+    <button id="cancel">取消定时器❌</button>
+</body>
+<script>
+    /*
+    例子1:按下第一个按钮会设置一个定时器，
+    定时器在 2s 后输出信息,"键盘敲烂，月薪过万"
+    ，按下第二个按钮可以取消定时器
+     */
+     // setTimeout(回调函数，事件（以毫秒为计算），参数列表)
+     // setTimeout 执行后会返回一个定时器的ID
+     let timeID;
+     document.getElementById("btn").addEventListener("click",function(e){
+             timeID = setTimeout(function(xianjiao,pinguo){
+             alert("键盘敲烂，月薪过万");
+             // 打印传进来的参数
+             console.log(xianjiao,pinguo);
+         },2000,"🍌","🍎")
+     })
+     // 取消定时器 clearTimeout(timeID)
+     document.getElementById("cancel").addEventListener("click",function(e){
+        console.log("取消定时器");
+        clearTimeout(timeID);
+     })
+
+</script>
+
+</html>

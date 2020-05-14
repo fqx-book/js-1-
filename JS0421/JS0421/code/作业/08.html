@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+    取数组 [12,65,22,01,98,32,32] 中的最大值 的函数
+     */
+    let nums = [12, 65, 22, 01, 98, 32, 32];
+
+    function maxNum(nums){
+        // 最大值 0 
+        let max = 0;
+        for (let i = 0; i < nums.length; i++) {
+
+            let add = nums[i];
+            if (max < add) {
+                max = add;
+            }
+        }
+        　return max;
+    }
+    console.log(maxNum(nums));
+
+</script>
+
+</html>

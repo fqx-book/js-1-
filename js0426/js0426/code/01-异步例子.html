@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">触发</button>
+</body>
+<script>
+    /* 异步编程例子 */
+    console.log("开始代码");
+    document.getElementById("btn").addEventListener("click", function (e) {
+        // alert 信息
+        alert("天啊");
+        // 创建一个图片元素
+        let img = document.createElement("img");
+        // 给图片元素赋值
+        img.src = "./img/3.jpg";
+        // 添加到body上
+        document.body.append(img);
+    })
+    console.log("结束代码");
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p">事件源</p>
+    <button id="btn">点击触发自定义事件</button>
+</body>
+<script>
+    /* 
+        创建自定义事件
+     */
+    // let event = new Event("我是自定义事件");
+    let customEvent = new CustomEvent('我是自定义事件', { 'detail': {
+        names:"海峰"
+    }});
+    // 绑定自定义事件 到元素上
+    document.getElementById("p").addEventListener("我是自定义事件", function (e) {
+        console.log(e);
+    })
+    document.getElementById("btn").addEventListener("click", function () {
+        document.getElementById("p").dispatchEvent(customEvent);
+    })
+</script>
+
+</html>

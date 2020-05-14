@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 对象是引用类型 比较的时候 比较地址
+    // 对象1
+    let obj = new Object();
+    obj.sex = "男";
+    obj.age = 18;
+    obj.hobby = "打篮球和读书";
+    // 对象2
+    let obj1 = new Object();
+    let obj2 = obj1;
+    obj1.sex = "男";
+    obj1.age = 18;
+    obj1.hobby = "打篮球和读书";
+    console.log(obj === obj1); // false
+    console.log(obj == obj1); // false
+    console.log(obj.sex === obj1.sex);//true
+    console.log(obj1 === obj2); // true
+
+</script>
+</html>

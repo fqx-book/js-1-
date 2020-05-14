@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+        属性的访问
+     */
+    // 小明
+    let xiaoming = new Object();
+    let obj = new Object();
+    obj.sex = "男";
+    obj.age = 18;
+    obj.hobby = "打篮球和读书";
+    console.log(obj.sex);
+    // 属性可以是 字符串
+    console.log(obj["sex"]);
+    // 如果属性是一个数字
+    obj[1] = 1;
+    console.log(obj[1]);
+   // console.log(obj.1); 不可以通过点属性访问
+   // 空字符串
+   obj[""] = "empty string";
+   console.log(obj[""]);
+   //console.log(obj."");
+   // 字符串 中间有空
+   obj["shilin haifeng"] = "shilin haifeng";
+   console.log(obj["shilin haifeng"]);
+   // 对象
+   obj[xiaoming] = xiaoming;
+   console.log(obj[xiaoming]);
+   // 连接符
+   obj["+"]= "+";
+   console.log( obj["+"]);
+  // console.log( obj."+"); 不可以
+  
+
+</script>
+
+</html>

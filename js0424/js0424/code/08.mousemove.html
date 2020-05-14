@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color:red;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h">在这进行鼠标移动试试</h1>
+</body>
+<script>
+    /* 
+    mousemove  指针在元素内移动时持续触发。
+     */
+    var h1 = document.querySelector("h1");
+    h1.addEventListener("mousemove",function(e){  
+        console.log(e);
+        let h = document.getElementById("h");
+        h.classList.toggle("red");
+
+    });
+</script>
+</html>

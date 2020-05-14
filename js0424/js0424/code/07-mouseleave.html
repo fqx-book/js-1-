@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div" style="background-color: red;width: 200px;height: 200px;"></div>
+</body>
+<script>
+    
+    //mouseleave 指针移出元素范围外（不冒泡）。 
+    //指点设备（通常是鼠标）的指针移出某个元素时，会触发mouseleave事件。
+    document.getElementById("div").addEventListener('mouseleave',function(e){
+        console.log(e);
+        alert("鼠标移出");
+    })
+</script>
+</html>

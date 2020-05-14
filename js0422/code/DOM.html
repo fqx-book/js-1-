@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吃鸡</title>
+</head>
+<body>
+    <div>
+        <button id="btn1">将吃鸡放到所有城市后面</button>
+        <button id="btn2">将吃鸡放到所有城市前面</button>
+        <button id="btn3">将吃鸡放到上海的后面</button>
+        <button id="btn4">将吃鸡放到上海的前面</button>
+        <button id="btn5">删除北京</button>
+        <button id="btn6">删除所有节点</button>
+    </div>
+    <ul>
+        <li id="beijing">北京</li>
+        <li id="shanghai">上海</li>
+        <li id="zhengzhou">郑州</li>
+        <li id="chiji">吃鸡</li>
+        <li id="wangzherongyao">王者荣耀</li>
+    </ul>
+</body>
+<script>
+    let newLi=document.createElement('li');//创建一个新的元素
+    let beijingPN=document.getElementById('beijing').parentNode;//获取子元素的父节点
+    let chiji=document.getElementById('chiji');//获取吃鸡的id
+    //将吃鸡放到所有城市后面
+    let btn1=document.getElementById('btn1');//获取第一个按钮的id
+    btn1.onclick=function(){
+        let wangzherongyao=document.getElementById('wangzherongyao');//获取王者荣耀的id
+        beijingPN.insertBefore(newLi,wangzherongyao);//将新创建的元素放到王者荣耀之前
+        beijingPN.replaceChild(chiji,newLi);//将吃鸡替换新创建的元素
+    }
+    //将吃鸡放到所有城市前面
+    let btn2=document.getElementById('btn2');//获取第二个按钮的id
+    btn2.onclick=function(){
+        let first= beijingPN.firstChild;
+        // let beijing=document.getElementById('beijing');
+        beijingPN.insertBefore(newLi,first);
+        beijingPN.replaceChild(chiji,newLi);
+    }
+    //将吃鸡放到上海的后面
+    let btn3=document.getElementById('btn3');//获取第三个按钮的id
+    btn3.onclick=function(){
+        let zhengzhou=document.getElementById('zhengzhou');
+        beijingPN.insertBefore(newLi,zhengzhou);
+        beijingPN.replaceChild(chiji,newLi);
+    }
+
+    //将吃鸡放到上海的前面
+    let btn4=document.getElementById('btn4');//获取第四个按钮的id
+    btn4.onclick=function(){
+        let shanghai=document.getElementById('shanghai');
+        beijingPN.insertBefore(newLi,shanghai);
+        beijingPN.replaceChild(chiji,newLi);
+    }
+    
+    //删除北京
+    let btn5=document.getElementById('btn5');//获取第五个按钮的id
+    btn5.onclick=function(){
+        let beijing=document.getElementById('beijing');
+        beijingPN.removeChild(beijing);
+
+    }
+    //删除所有节点
+    let btn6=document.getElementById('btn6');//获取第六个按钮的id
+    btn6.onclick=function(){
+        while(beijingPN.firstChild){//利用循环依次删除第一个子节点
+            beijingPN.removeChild(beijingPN.firstChild);
+        }
+    }
+</script>
+</html>

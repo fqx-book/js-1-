@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+        封装一个显示时间的函数，显示当前时间 ,如`2020-04-15 12:12:12`
+     */
+    function getDate() {
+        // 1. 创建时间对象
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;// 默认 从 0 开始
+        month = month >= 10 ? month : "0" + month;
+        let day = date.getDate();
+        day = day >= 10 ? day : "0" + day;
+        let hour = date.getHours();
+        hour = hour >= 10 ? hour : "0" + hour;
+        let minute = date.getMinutes();
+        minute = minute >= 10 ? minute : "0" + minute;
+        let second = date.getSeconds();
+        second = second >= 10 ? second : "0" + second;
+        let result = year + "-" + month + "-" + day +
+            " " + hour + ":" + minute + ":" + second;
+        return result;
+    }
+    console.log(getDate())
+</script>
+
+</html>

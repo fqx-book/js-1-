@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1" style="font-size: 50px">不想搞了</p>
+</body>
+<script>
+    /* 
+    
+mouseout  指针移出元素，或者移到它的子元素上。
+     */
+    let p = document.getElementById("p1");
+    p.addEventListener("mouseout", function (e) {
+        p.style.fontSize = "10px";
+    })
+</script>
+
+</html>

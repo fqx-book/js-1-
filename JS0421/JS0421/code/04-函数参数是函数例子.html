@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    let square = function (number) { return number * number };
+    console.log(square(5));// 25
+    // 定义一个函数 将 numbers 里面的值 全部 自身 相乘
+    var numbers = [0, 1, 2, 5, 10];
+    // 将numbers 变成  [0*0,1*1,2*2,5*5,10*10]
+    // 第一种方式 传统循环方式
+    // function map(numbers){
+    //     for(let i=0;i<numbers.length;i++){
+    //         // 自身数字 相乘
+    //         numbers[i] = numbers[i] * numbers[i];
+    //     }
+    //     return numbers;
+    // }
+    // console.log(map(numbers));
+    // 第二种方式 参数1:函数 参数2:数值
+    function map(f, numbers) {
+        for (let i = 0; i < numbers.length; i++) {
+            // 调用参数 里面的函数 f
+            numbers[i] = f(numbers[i]);
+        }
+        // 记得返回结果
+        return numbers;
+    }
+    console.log(map(square,numbers));
+
+
+
+</script>
+
+</html>

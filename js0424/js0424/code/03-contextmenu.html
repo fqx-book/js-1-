@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="noContextMenu">这个段落右键菜单已被禁用。</p>
+    <p>但是这个段落没有被禁用。</p>
+</body>
+<script>
+    let  noContext = document.getElementById('noContextMenu');
+    noContext.addEventListener('contextmenu', e => {
+        // 阻止默认行为 出现右键菜单
+        e.preventDefault();
+    });
+
+</script>
+
+</html>

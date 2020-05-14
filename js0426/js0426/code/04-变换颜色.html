@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>我会变色</h1>
+    <button>停止颜色变换</button>
+</body>
+<script>
+    /*
+        例２：两种颜色的切换
+        每隔一秒就调用函数 flashtext() 一次，
+        直至你通过按下 Stop 按钮来清除本次重复操作
+        */
+    var h1 = document.querySelector("h1");
+    // 切换颜色的函数
+    function flashtext() {
+        h1.style.color = h1.style.color == "blue" ? "red" : "blue";
+    }
+    var timeID = setInterval(flashtext, 1000);
+    var btn = document.querySelector("button");
+    // 清除定时器
+    btn.addEventListener("click", function (e) {
+        clearInterval(timeID);
+    });
+</script>
+
+</html>

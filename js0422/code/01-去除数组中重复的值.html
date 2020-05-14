@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /* 
+        去除数组中 重复的值 
+     */
+     let arr = [1,1,2,3,4,5,6,6];
+     // 新键一个数组 放置去重之后的数组
+     let new_arr = [];
+     for(let i=0;i<arr.length;i++){
+         // 如果在新数组中 找不到 元素 返回-1
+         if(new_arr.indexOf(arr[i]) === -1){
+             new_arr.push(arr[i]);
+         }
+     }
+     console.log("去重之后的数组:"+new_arr);
+
+</script>
+</html>

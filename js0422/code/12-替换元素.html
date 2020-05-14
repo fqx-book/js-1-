@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <p>原先内容</p>
+        <button id="btn">替换</button>
+</body>
+<script>
+    let p = document.querySelector("p");
+    let new_p = document.createElement("p");
+    new_p.innerText = "新的内容";
+    // 替换事件
+    document.getElementById("btn").addEventListener("click",function(){
+        // 父元素 
+        document.body.replaceChild(new_p,p);
+    })
+</script>
+</html>

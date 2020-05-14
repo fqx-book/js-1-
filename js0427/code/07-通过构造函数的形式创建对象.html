@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /* 
+         1. 通过创建一个构造函数来定
+         义对象的类型。首字母大写是非常普遍而且很恰当的惯用法。
+         通过 new 创建对象实例。
+     */
+     // 函数对象的模版
+    function Person(sex,age,hobby){
+        this.sex = sex;
+        this.age = age;
+        this.hobby = hobby;
+    }
+    // let xiaoming = new Object()
+    let xiaoming = new Person("男",18,"打篮球和读书");
+    console.log(typeof xiaoming);
+    console.log(xiaoming);
+</script>
+</html>
